@@ -5,16 +5,12 @@ const bcrypt = require('bcrypt');
 const Subject = require('./Subject');
 
 const userSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  lastName: {
-    type: String,
-    required: true,
-    trim: true
-  },
+username: {
+  type: String,
+  required: true,
+  unique: true,
+  trim: true
+},
   email: {
     type: String,
     required: true,
@@ -25,7 +21,11 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+<<<<<<< HEAD
   subject: [Subject.schema]
+=======
+  //cards: [Card.schema]
+>>>>>>> 638456f6d4b66f30f7496c527832fde312581675
 });
 
 // set up pre-save middleware to create password
