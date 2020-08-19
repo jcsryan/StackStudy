@@ -11,10 +11,11 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install": "cd server && npm i && cd ../client && npm i",
   },
   "eslintConfig": {
     "extends": "react-app"
