@@ -18,12 +18,13 @@ module.exports = {
 
     console.log("token", token)
 
-
+     // if no token, return request object as is
     if (!token) {
       return req;
     }
 
     try {
+      // decode and attach user data to request object
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     }
@@ -31,6 +32,7 @@ module.exports = {
       console.log('Invalid token');
     }
 
+      // return updated request object
     return req;
   },
   signToken: function ({ firstName, email, _id }) {
