@@ -6,7 +6,14 @@ import Sub4 from './sub4';
 import Sub5 from './sub5';
 //import Navbar from '../navbar'
 
+import { QUERY_USER } from '../../utils/queries';
+import { useQuery } from '@apollo/react-hooks';
+
 function CardBody(props) {
+    const { loading, data} = useQuery(QUERY_USER);
+   const user = data?.user || [];
+    console.log(user)
+   
      function renderCard (tab)  {
           switch(tab){
             case 'Sub1':

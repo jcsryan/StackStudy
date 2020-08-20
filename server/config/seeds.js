@@ -28,11 +28,11 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: 'John',
-    lastName: 'Ryan',
+    username: 'John',
+   
     email: 'john@email.com',
     password: 'password12345',
-    orders: [
+    subjects: [
       {
         subjects: [subjects[0]._id, subjects[1]._id, subjects[2]._id]
       }
@@ -40,11 +40,17 @@ db.once('open', async () => {
   });
 
   await User.create({
-    firstName: 'Israel',
-    lastName: 'Berlanga',
+    username: 'Israel',
     email: 'israel@email.com',
     password: 'password12345'
   });
+
+  await Card.deleteMany();
+
+  await Card.create({
+    frontText: "the mitochondria is the powerhouse of the cell biatch",
+    backText: "SCIENCE FOOL"
+  })
 
   console.log('users seeded');
 
