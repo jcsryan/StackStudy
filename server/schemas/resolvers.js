@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Subject, Card } = require('../models');
 const { signToken } = require('../utils/auth');
+const Dummy = require('../models/Dummy');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
@@ -25,6 +26,9 @@ const resolvers = {
             return User.findOne({ username })
               .select('-__v -password')
           },
+      dummies: async () => {
+        return Dummy.find()
+      }
     },
     Mutation: {
         addUser: async (parent, args) => {

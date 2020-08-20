@@ -1,7 +1,21 @@
 const db = require('./connection');
-const { User, Card, Subject } = require('../models');
+const { User, Card, Subject, Dummy } = require('../models');
 
 db.once('open', async () => {
+
+  await Dummy.deleteMany();
+
+  await Dummy.insertMany([
+    {
+      text: 'Michael'
+    },
+    {
+      text: 'Michael-again'
+    },
+    {
+      text: 'Michael-once-more'
+    }
+  ]);
 
   await Subject.deleteMany();
 
