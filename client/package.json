@@ -1,5 +1,5 @@
 {
-  "name": "flashcard",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,8 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install": "cd server && npm i && cd ../client && npm i"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
