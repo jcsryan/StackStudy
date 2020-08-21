@@ -24,7 +24,7 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [currentPage, handlePageChange] = useState('Sub1');
+  const [currentPage, handlePageChange] = useState('Login');
   return (
     <ApolloProvider client = {client}>
       <ApolloHooksProvider client={client}>

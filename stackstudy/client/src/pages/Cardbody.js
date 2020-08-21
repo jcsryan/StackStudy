@@ -4,8 +4,8 @@ import Sub2 from './sub2';
 import Sub3 from './sub3';
 import Sub4 from './sub4';
 import Sub5 from './sub5';
-//import Login from '../login/index'
-//import Signup from '../signup/index'
+import Login from './login'
+import Signup from './signup'
 //import Navbar from '../navbar'
 
 
@@ -29,12 +29,12 @@ function CardBody(props) {
                 return <Sub4/>
             case 'Sub5':
                 return <Sub5/>
-         //   case 'login':
-           //     return <Login/>
-            //case 'signup':
-              //  return <Signup/>
+           case 'login':
+                return <Login/>
+            case 'signup':
+                return <Signup/>
                 default:
-                  return <Sub1/>
+                  return <Login/>
         }
     } 
      
