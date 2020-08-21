@@ -6,9 +6,18 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
-  type Subject {
-    name: String
-  }
+type User {
+  _id: ID
+  username: String
+  email: String
+  subjects: [Subject]
+}
+
+type Subject {
+  _id: ID
+  name: String
+  cards: [Card]
+}
 
   type Card {
     _id: ID
@@ -16,26 +25,17 @@ const typeDefs = gql`
     backText: String
   }
 
-  type User {
-    _id: ID
-    username: String
-    email: String
-    cards: [Card]
-  }
-
-
   type Query {
     me: User
     users: [User]
     user(username: String!): User
+    subjects(name: String): [Subject]
+    subject(_id: ID!): Subject
   }
 
   type Mutation {
-    addCard(subjects: [ID]!, frontText: String!, backText: String!): Card
-    addSubject(cards: [ID]!, name: String!): Subject
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateCard(_id: ID!, frontText: String!, backText: String!): Card
-    updateSubject(_id: ID!, name: String!): Subject
+    addCard(subjectId: ID!, frontText: String!, backText: String!): Subject
+    addSubject(name: String!): Subject
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
   }
@@ -54,6 +54,11 @@ const typeDefs = gql`
 //   user: User
 //   subject(_id: ID!): Subject
 // }
+
+
+//updateUser(username: String, email: String, password: String): User
+//updateCard(_id: ID!, frontText: String!, backText: String!): Card
+//updateSubject(_id: ID!, name: String!): Subject
 
 // export the typeDefs
 module.exports = typeDefs;

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Card = require('./Card');
+const Subject = require('./Subject');
 
 const userSchema = new Schema({
 username: {
@@ -21,7 +21,12 @@ username: {
     required: true,
     minlength: 5
   },
-  //cards: [Card.schema]
+  subjects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Subject'
+    }
+  ]
 });
 
 // set up pre-save middleware to create password
