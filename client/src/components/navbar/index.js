@@ -1,7 +1,7 @@
 import React from "react";
 
 function Navbar(props) {
-    const tabs = ['Sub1','Sub2', 'Sub3', 'Sub4', "Sub5"]
+    const tabs = ['Sub1','Sub2', 'Sub3', 'Sub4', "Sub5", "login", "signup"]
     return(
         <ul className='nav' >
             
