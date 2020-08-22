@@ -49,7 +49,8 @@ db.once('open', async () => {
 
   await Card.create({
     frontText: "the mitochondria is the powerhouse of the cell biatch",
-    backText: "SCIENCE FOOL"
+    backText: "SCIENCE FOOL",
+    subjectId: ""
   })
 
   console.log('users seeded');

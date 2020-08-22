@@ -1,8 +1,12 @@
 import React from 'react';
 
+import {QUERY_CARD} from '../utils/queries'
+import { useQuery } from '@apollo/react-hooks';
 
 function Sub1() {
-  const userCards=[]
+  const {data} = useQuery(QUERY_CARD)
+  const card = data?.subjects[0] || []
+  console.log(card)
     return(
         <div className="container">
             <div className="subjectlist">
@@ -12,7 +16,7 @@ function Sub1() {
             </div>
         <div classname="sub1container">
             <textarea className="usertext"></textarea>
-            <p>1</p>
+            <p>{card.backText}</p>
         </div>
          </div>
     )

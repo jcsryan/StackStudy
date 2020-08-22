@@ -23,6 +23,7 @@ type Subject {
     _id: ID
     frontText: String
     backText: String
+    subjectId: String
   }
 
   type Query {
