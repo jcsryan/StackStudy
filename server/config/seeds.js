@@ -28,21 +28,24 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    username: 'John',
+    username: 'Jesse',
    
-    email: 'john@email.com',
+    email: 'pinkman@email.com',
     password: 'password12345',
     subjects: [
       {
-        subjects: [subjects[0]._id, subjects[1]._id, subjects[2]._id]
-      }
+        subjects: [subjects[0]._id]
+      },
     ]
   });
 
   await User.create({
-    username: 'Israel',
-    email: 'israel@email.com',
-    password: 'password12345'
+    username: 'Walter',
+    email: 'white@email.com',
+    password: 'password12345',
+    subjects: [
+      [subjects[1]._id]
+    ]
   });
 
   await Card.deleteMany();
