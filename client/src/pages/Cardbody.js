@@ -9,13 +9,15 @@ import Signup from './signup'
 //import Navbar from '../navbar'
 
 
-import { QUERY_USER } from '../utils/queries';
+import { QUERY_USER, QUERY_SUBJECT, QUERY_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 function CardBody(props) {
     
-    const { loading, data} = useQuery(QUERY_USER);
+  //  const { loading, data} = useQuery(QUERY_USER);
+    const {  data} = useQuery(QUERY_CARD);
   const user = data?.users || [];
-  console.log(user)
+  const subject = data?.subjects || [];
+ // console.log(subject)
    
      function renderCard (tab)  {
           switch(tab){

@@ -9,3 +9,25 @@ query users{
     }
   } 
 `;
+
+
+export const QUERY_SUBJECT = gql`
+  query subject{
+    subjects{
+      name
+    }
+  }
+  `;
+
+  export const QUERY_CARD = gql`
+  query subject{
+    subjects {
+      name
+      cards {
+        _id
+        frontText
+        backText
+      }
+    }
+  }
+  `;

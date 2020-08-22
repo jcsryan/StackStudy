@@ -1,8 +1,12 @@
 import React from 'react';
 
+import {QUERY_CARD} from '../utils/queries'
+import { useQuery } from '@apollo/react-hooks';
 
 function Sub5() {
-  const userCards=[]
+    const {data} = useQuery(QUERY_CARD)
+    const card = data?.subjects[4] || []
+    console.log(card)
     return(
         <div className="container">
             <div className="subjectlist">

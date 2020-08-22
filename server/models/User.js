@@ -21,12 +21,14 @@ username: {
     required: true,
     minlength: 5
   },
-  subjects: [
+
+  Subjects: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Subject'
     }
   ]
+  
 });
 
 // set up pre-save middleware to create password
