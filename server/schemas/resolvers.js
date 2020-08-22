@@ -34,6 +34,15 @@ const resolvers = {
         subject: async (parent, {_id }) => {
             return subject.findOne({ _id });
         },
+        // get all cards
+        cards: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Card.find(params).sort({ createdAt: -1 });
+          },
+        // get Card by id
+        card: async (parent, {_id }) => {
+            return card.findOne({ _id });
+        },
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -72,7 +81,22 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in!');
-        }
+        },
+        addCard: async (parent, args, context) => {
+          if (context.user) {
+              const card = await Card.create({ ...args, username: context.user.username });
+
+              await User.findByIdAndUpdate(
+                  { _id: context.user._id },
+                  { $push: { cards: card._id }},
+                  { new: true }
+              );
+
+              return card;
+          }
+
+          throw new AuthenticationError('You need to be logged in!');
+      }
 
     }
 };

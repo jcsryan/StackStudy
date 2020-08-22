@@ -31,10 +31,12 @@ type Subject {
     user(username: String!): User
     subjects(name: String): [Subject]
     subject(_id: ID!): Subject
+    cards: [Card]
+    card(_id: ID!): Card
   }
 
   type Mutation {
-    addCard(subjectId: ID!, frontText: String!, backText: String!): Subject
+    addCard(frontText: String!, backText: String!): Card
     addSubject(name: String!): Subject
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
@@ -46,15 +48,6 @@ type Subject {
     user: User
   }
 `;
-
-
-// type Query {
-//   cards(subject: ID, name: String): [Card]
-//   card(_id: ID!): Card
-//   user: User
-//   subject(_id: ID!): Subject
-// }
-
 
 //updateUser(username: String, email: String, password: String): User
 //updateCard(_id: ID!, frontText: String!, backText: String!): Card
