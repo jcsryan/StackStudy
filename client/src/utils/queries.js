@@ -14,7 +14,13 @@ query users{
 export const QUERY_SUBJECT = gql`
   query subject{
     subjects{
+      _id
       name
+      cards {
+        _id
+        frontText
+        backText
+      }
     }
   }
   `;
