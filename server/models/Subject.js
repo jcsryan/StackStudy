@@ -1,25 +1,7 @@
 const mongoose = require('mongoose');
-//const Card = require('./Card');
+const Card = require('./Card');
 
-const { Schema, model } = mongoose;
-
-const cardSchema = new Schema({
-  frontText: {
-    type: String,
-    required: true
-  },
-  backText: {
-    type: String,
-    required: true
-  },
-  subjectId: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId()
-    
-  }}
-);
-
-let Card = cardSchema
+const { Schema } = mongoose;
 
 const subjectSchema = new Schema({
   name: {
@@ -27,11 +9,11 @@ const subjectSchema = new Schema({
     required: true,
     trim: true
   },
-  cards: [Card]
+  cards: [Card.schema]
 });
 
 
 
-const Subject =model('Subject', subjectSchema);
+const Subject = mongoose.model('Subject', subjectSchema);
 
 module.exports = Subject;

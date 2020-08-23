@@ -23,7 +23,6 @@ type Subject {
     _id: ID
     frontText: String
     backText: String
-    subjectId: String
   }
 
   type Query {
@@ -37,7 +36,7 @@ type Subject {
   }
 
   type Mutation {
-    addCard(frontText: String!, backText: String!): Card
+    addCard(subjectId: ID!, frontText: String!, backText: String!): Subject
     addSubject(name: String!): Subject
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth

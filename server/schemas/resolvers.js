@@ -35,14 +35,14 @@ const resolvers = {
             return subject.findOne({ _id });
         },
         // get all cards
-        cards: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Card.find(params).sort({ createdAt: -1 });
-          },
+       // cards: async (parent, { username }) => {
+        //    const params = username ? { username } : {};
+        //    return Card.find(params).sort({ createdAt: -1 });
+       //   },
         // get Card by id
-        card: async (parent, {_id }) => {
-            return card.findOne({ _id });
-        },
+      //  card: async (parent, {_id }) => {
+      //      return card.findOne({ _id });
+       // },
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -82,21 +82,19 @@ const resolvers = {
 
             throw new AuthenticationError('You need to be logged in!');
         },
-        addCard: async (parent, args, context) => {
+        addCard: async (parent, { subjectId, frontText, backText }, context) => {
           if (context.user) {
-              const card = await Card.create({ ...args, username: context.user.username });
-
-              await User.findByIdAndUpdate(
-                  { _id: context.user._id },
-                  { $push: { cards: card._id }},
-                  { new: true }
-              );
-
-              return card;
+            const updatedSubject = await Subject.findOneAndUpdate(
+              { _id: subjectId },
+              { $push: { cards: { frontText, backText, username: context.user.username } } },
+              { new: true, runValidators: true }
+            );
+        
+            return updatedSubject;
           }
-
+        
           throw new AuthenticationError('You need to be logged in!');
-      }
+        },
 
     }
 };
