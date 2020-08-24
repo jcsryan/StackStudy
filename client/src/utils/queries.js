@@ -37,3 +37,17 @@ export const QUERY_SUBJECT = gql`
     }
   }
   `;
+
+  export const QUERY_ME = gql `
+    query me {
+      subjects{
+        _id
+        name
+        cards{
+          _id
+          frontText
+          backText
+        }
+      }
+    }
+  `;
