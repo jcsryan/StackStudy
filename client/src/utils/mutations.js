@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -22,4 +23,17 @@ export const ADD_USER = gql`
       }
     }
   }
+`;
+
+export const ADD_CARD = gql `
+mutation addCard($subjectId: ID,$frontText: String, $backText: String) {
+  addCard(subjectId: $subjectId, frontText: $frontText, backText: $backText) {
+    _id
+    cards{
+      _id
+        frontText
+    backText
+    }
+  }
+}
 `;
