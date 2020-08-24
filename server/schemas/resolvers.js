@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Subject, Card } = require('../models');
+const { User, Card } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -25,24 +25,15 @@ const resolvers = {
             return User.findOne({ username })
               .select('-__v -password')
           },
-          // get all subjects
-          subjects: async (parent, { username }) => {
+          // get all cards
+          cards: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Subject.find(params).sort({ createdAt: -1 });
+            return Card.find(params).sort({ createdAt: -1 });
           },
-        // get Subject by id
-        subject: async (parent, {_id }) => {
-            return subject.findOne({ _id });
-        },
-        // get all cards
-       // cards: async (parent, { username }) => {
-        //    const params = username ? { username } : {};
-        //    return Card.find(params).sort({ createdAt: -1 });
-       //   },
         // get Card by id
-      //  card: async (parent, {_id }) => {
-      //      return card.findOne({ _id });
-       // },
+        card: async (parent, {_id }) => {
+            return Card.findOne({ _id });
+        },
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -67,35 +58,21 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addSubject: async (parent, args, context) => {
+        addCard: async (parent, args, context) => {
             if (context.user) {
-                const subject = await Subject.create({ ...args, username: context.user.username });
+                const card = await Card.create({ ...args, username: context.user.username });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { subjects: subject._id }},
+                    { $push: { cards: card._id }},
                     { new: true }
                 );
 
-                return subject;
+                return card;
             }
 
             throw new AuthenticationError('You need to be logged in!');
-        },
-        addCard: async (parent, { subjectId, frontText, backText }, context) => {
-          if (context.user) {
-            const updatedSubject = await Subject.findOneAndUpdate(
-              { _id: subjectId },
-              { $push: { cards: { frontText, backText, username: context.user.username } } },
-              { new: true, runValidators: true }
-            );
-        
-            return updatedSubject;
-          }
-        
-          throw new AuthenticationError('You need to be logged in!');
-        },
-
+        }
     }
 };
 

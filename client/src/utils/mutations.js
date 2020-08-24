@@ -26,14 +26,23 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_CARD = gql `
-mutation addCard($subjectId: ID,$frontText: String, $backText: String) {
-  addCard(subjectId: $subjectId, frontText: $frontText, backText: $backText) {
-    _id
-    cards{
+mutation addCard($frontText: String!, $backText: String!) {
+  addCard(frontText:$frontText, backText: $backText) {
       _id
-        frontText
+		frontText
     backText
-    }
   }
 }
 `;
+
+// export const ADD_SUBJECT = gql`
+//     mutation addSubject($name: String!) {
+//         addSubject(name: $name) {
+//             _id
+//             name
+//             cards {
+//                 _id
+//             }
+//         }
+//     }
+// `;

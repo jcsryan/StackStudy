@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_SUBJECT } from '../utils/mutations';
 import { QUERY_SUBJECT, QUERY_ME } from '../utils/queries';
-import Sub3 from './sub3';
-import Auth from '../utils/auth';
 
-const Sub2 = () => {
+const SubjectForm = () => {
 
     const [name, setText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
@@ -43,7 +41,7 @@ const Sub2 = () => {
         event.preventDefault();
 
         try {
-            // add subject to database
+            // add thought to database
             await addSubject({
                 variables: { name }
             });
@@ -66,7 +64,7 @@ const Sub2 = () => {
                   onSubmit={handleFormSubmit}
             >
                 <textarea
-                    placeholder="Enter Subject..."
+                    placeholder="Here's a new thought..."
                     value={name}
                     className="form-input col-12 col-md-9"
                     onChange={handleChange}
@@ -79,4 +77,4 @@ const Sub2 = () => {
     );
 };
 
-export default Sub2;
+export default SubjectForm;

@@ -1,25 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_CARD } from '../utils/mutations';
 
-import {QUERY_CARD} from '../utils/queries'
-import { useQuery } from '@apollo/react-hooks';
+const Sub3 = ({ subjectId }) => {
 
-function Sub3() {
-    const {data} = useQuery(QUERY_CARD)
-    const card = data?.subjects[2] || []
-    console.log(card)
-    return(
-        <div className="container">
-            <div className="subjectlist">
-                <ul>
-               
-                </ul>
-            </div>
-        <div classname="sub1container">
-            <textarea className="usertext"></textarea>
-            <p>3</p>
-        </div>
-         </div>
-    )
-}
+    const [{frontText, backText}, setBody] = useState('');
+const [addCard, { error }] = useMutation(ADD_CARD);
+
+    const handleFormSubmit = async event => {
+        event.preventDefault();
+        setBody('');
+
+        await addCard({
+            variables: { frontText, backText, subjectId }
+          });
+       
+      };
+
+  return (
+    <div>
+      <form className="flex-row justify-center justify-space-between-md align-stretch"
+        onSubmit={handleFormSubmit}>
+        <textarea
+          placeholder="Front text..."
+          value={frontText}
+          className="form-input col-12 col-md-9"
+        ></textarea>
+               <textarea
+          placeholder="back text..."
+          value={backText}
+          className="form-input col-12 col-md-9"
+        ></textarea>
+
+        <button className="btn col-12 col-md-3" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default Sub3;

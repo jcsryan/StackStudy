@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Subject = require('./Subject');
+const Card = require('./Card');
 
 const userSchema = new Schema({
 username: {
@@ -21,10 +21,10 @@ username: {
     required: true,
     minlength: 5
   },
-  subjects: [
+  cards: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Subject'
+      ref: 'Card'
     }
   ]
 });
