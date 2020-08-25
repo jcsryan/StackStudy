@@ -26,13 +26,13 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_CARD = gql `
-mutation addCard($subjectId: ID,$frontText: String, $backText: String) {
+mutation addCard($subjectId: ID, $frontText: String, $backText: String) {
   addCard(subjectId: $subjectId, frontText: $frontText, backText: $backText) {
     _id
     cards{
       _id
-        frontText
-    backText
+      frontText
+      backText
     }
   }
 }
