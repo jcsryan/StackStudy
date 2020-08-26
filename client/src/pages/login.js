@@ -36,9 +36,11 @@ const handleFormSubmit = async event => {
   return (
     <main className='login flex-row justify-center mb-4'>
       <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Login</h4>
-          <div className='card-body'>
+        <div className='logincard'>
+          
+          <div className='login-card-outer'>
+          <h4 className='login-card-header'>Login</h4>
+            <div className='login-card-body'>
             <form onSubmit={handleFormSubmit}>
               <input
                 className='form-input'
@@ -62,6 +64,7 @@ const handleFormSubmit = async event => {
                 Submit
               </button>
             </form>
+            </div>
             {error && <div>Login failed</div>}
 
           </div>
