@@ -64,7 +64,7 @@ const resolvers = {
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { cards: card._id }},
+                    { $push: { cards: card.frontText, cards: card.backText }},
                     { new: true }
                 );
 

@@ -37,6 +37,7 @@ query users{
 
   export const QUERY_ME = gql `
     query me {
+      username
         cards{
           _id
           frontText

@@ -35,20 +35,20 @@ export default function Sub1() {
         <h2>Signup</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
-            <label htmlFor="firstName">First Name:</label>
+            <label htmlFor="firstName">Front Text:</label>
             <textarea
-              placeholder="First"
-              name="firstName"
+              placeholder="Front"
+              name="front"
               type="firstName"
               id="frontText"
               onChange={handleChange}
             />
           </div>
           <div className="flex-row space-between my-2">
-            <label htmlFor="lastName">Last Name:</label>
+            <label htmlFor="lastName">Back Text</label>
             <textarea
-              placeholder="Last"
-              name="lastName"
+              placeholder="Back"
+              name="back"
               type="lastName"
               id="lastName"
               onChange={handleChange}

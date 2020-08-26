@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {QUERY_CARD} from '../utils/queries'
+import {QUERY_CARDS} from '../utils/queries'
 import { useQuery } from '@apollo/react-hooks';
 
 function Sub4() {
-    const {data} = useQuery(QUERY_CARD)
+    const {data} = useQuery(QUERY_CARDS)
     const card = data?.subjects[3] || []
     console.log(card)
     return(
