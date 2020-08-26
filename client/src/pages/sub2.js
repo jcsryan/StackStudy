@@ -72,20 +72,22 @@ const Sub2 = () => {
    
   return (
     <div>
-      <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
-        Character Count: {characterCount}/280
-       
-      </p>
+        <div className='logincard'>
+          <div className='login-card-outer'>
+            <div className='login-card-header'>
+            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
+        Character Count: {characterCount}/280</p>
+              <div className='login-card-body'>
       <form className="flex-row justify-center justify-space-between-md align-stretch"
       onSubmit={handleFormSubmit}>
         <textarea
-          placeholder="Enter card text"
+          placeholder="Enter Front Text"
           value={frontText}
           className="form-input col-12 col-md-9"
           onChange={handleFrontChange}
         ></textarea>
         <textarea
-          placeholder="Enter card text"
+          placeholder="Enter Back Text"
           value={backText}
           className="form-input col-12 col-md-9"
           onChange={handleBackChange}
@@ -94,16 +96,18 @@ const Sub2 = () => {
           Submit
         </button>
       </form>
-
+      </div></div></div></div>
       <div className="wholecard">
+        <div className="cardflip-div">
       {card.map(frontcard =>{
       return <div className="flip-card">
       <div className="flip-card-inner" key={frontcard.id}>
-        <div  className="flip-card-front">{frontcard.frontText}</div>
-        <div  className="flip-card-back">{frontcard.backText}</div>
+        <div  className="flip-card-front"><br></br><br></br>{frontcard.frontText}</div>
+        <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
-      </div>
+        </div>
       })}
+       </div>
     </div>
   
    
