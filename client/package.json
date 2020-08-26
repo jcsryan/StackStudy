@@ -13,6 +13,8 @@
     "graphql-tag": "^2.11.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.13.1",
+    "react-animations": "^1.0.0",
+    "react-card-flip": "^1.0.11",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"

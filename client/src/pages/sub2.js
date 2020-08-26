@@ -3,6 +3,11 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_CARD } from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
+
+import ReactCardFlip from 'react-card-flip';
+import { flip } from 'react-animations';
+import {bounce} from 'animate.css'
+
 //import Sub3 from './sub3';
 //import Auth from '../utils/auth';
 const Sub2 = () => {
@@ -10,6 +15,7 @@ const Sub2 = () => {
     const card = data?.cards || []
     const [frontText, setFrontText] = useState('');
     const [backText, setBackText] = useState('');
+    const [isFlipped, setIsFlipped] = useState(false) 
     const [characterCount, setCharacterCount] = useState(0);
     const [addCard, {error}] = useMutation(ADD_CARD, {
         update(cache, {data: {addCard}}) {
@@ -61,6 +67,8 @@ const Sub2 = () => {
        }
     };
 
+  
+    
    
   return (
     <div>
@@ -87,21 +95,39 @@ const Sub2 = () => {
         </button>
       </form>
 
-  <div className="wholecard">
-    {card.map(frontcard =>{
-     return <div key={frontcard.id}>
-       <div className="frontcard">{frontcard.frontText}</div>
-       <div className="backcard">{frontcard.backText}</div>
-       </div>
-    })}
-  </div>
+      <div className="wholecard">
+      {card.map(frontcard =>{
+      return <div className="flip-card">
+      <div className="flip-card-inner" key={frontcard.id}>
+        <div  className="flip-card-front">{frontcard.frontText}</div>
+        <div  className="flip-card-back">{frontcard.backText}</div>
+        </div>
+      </div>
+      })}
+    </div>
+  
+   
     </div>
   );
 };
 
 export default Sub2;
 
-/*import React, { useState } from 'react';
+/*
+   {card.map(frontcard =>{
+        return <div key={frontcard.id}>
+        <div className="frontcard">{frontcard.frontText}</div>
+        </div>
+      })}
+
+      {card.map(frontcard =>{
+        return <div key={frontcard.id}>
+        <div className="backcard">{frontcard.backText}</div>
+        </div>
+      })} 
+
+
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_CARD } from '../utils/mutations';
 import { QUERY_CARDS, QUERY_ME } from '../utils/queries';

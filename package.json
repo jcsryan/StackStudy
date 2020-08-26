@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jcsryan/StackStudy#readme",
   "dependencies": {
+    "animate.css": "^4.1.0",
     "if-env": "^1.0.4",
     "react-router-dom": "^5.2.0"
   },
