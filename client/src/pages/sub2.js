@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/react-hooks';
 //import Auth from '../utils/auth';
 const Sub2 = () => {
     const {data} = useQuery(QUERY_CARDS)
-    const card = data?.cards[1] || []
+    const card = data?.cards || []
     const [frontText, setFrontText] = useState('');
     const [backText, setBackText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
@@ -60,11 +60,13 @@ const Sub2 = () => {
            console.error(e)
        }
     };
+
+   
   return (
     <div>
       <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
         Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
+       
       </p>
       <form className="flex-row justify-center justify-space-between-md align-stretch"
       onSubmit={handleFormSubmit}>
@@ -84,6 +86,15 @@ const Sub2 = () => {
           Submit
         </button>
       </form>
+
+  <div className="wholecard">
+    {card.map(frontcard =>{
+     return <div key={frontcard.id}>
+       <div className="frontcard">{frontcard.frontText}</div>
+       <div className="backcard">{frontcard.backText}</div>
+       </div>
+    })}
+  </div>
     </div>
   );
 };

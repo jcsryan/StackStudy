@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.nav {
+  background-color: aqua;
+}
+/*header div*/
+
+.login {
+  background-color: aquamarine;
+}
+
+.bodycontainer {
+  background-color: bisque;
+}
+
+.cardContainet {
+  background-color: blueviolet;
+}
