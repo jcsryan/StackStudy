@@ -10,12 +10,6 @@ type User {
   _id: ID
   username: String
   email: String
-  subjects: [Subject]
-}
-
-type Subject {
-  _id: ID
-  name: String
   cards: [Card]
 }
 
@@ -29,15 +23,12 @@ type Subject {
     me: User
     users: [User]
     user(username: String!): User
-    subjects(name: String): [Subject]
-    subject(_id: ID!): Subject
-    cards: [Card]
+    cards(frontText: String, backText: String): [Card]
     card(_id: ID!): Card
   }
 
   type Mutation {
-    addCard(subjectId: ID, frontText: String, backText: String): Subject
-    addSubject(name: String!): Subject
+    addCard(frontText: String, backText: String): Card
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
   }
