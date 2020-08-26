@@ -16,15 +16,30 @@ code {
 
 
 .nav {
-  background-color: white;
+  background-color: rgb(240, 239, 228);
   height: 15rem;
-  background-image: url('./assets/uokpl.rs-books-on-shelf-png-4620356.png');
+  background-image: url('./assets/books.png');
   background-size: fill;
- 
   background-position: 100%;
+  margin: 0;
+  margin-bottom: 0;
+  padding: 0;
   
 }
 /*header div*/
+
+.nav-list {
+  margin-left: 1.75em;
+  margin-top: .5em;
+  display: flex;
+  flex-direction: column;
+  min-height: 8vh;
+  font-size: xx-large;
+  font-weight: 900;
+  text-decoration: none;
+  background-color: transparent;
+  font-family: 'Amatic SC', cursive;
+}
 
 .login {
   background-color: aquamarine;

@@ -4,7 +4,7 @@ function Navbar(props) {
     const tabs = ['Your Cards', "login", "signup"]
     return(
         <ul className='nav' >
-            
+            <div  className="nav-list">
             {tabs.map(tab => (
                 <li className="nav-list" key={tab}>
                     <a id="nav-list-a" href={'#' + tab}
@@ -19,6 +19,7 @@ function Navbar(props) {
                     </a>
                 </li>
             ))}
+            </div>
         </ul>
 
     )
