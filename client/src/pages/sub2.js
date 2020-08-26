@@ -4,9 +4,7 @@ import { ADD_CARD } from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 
-import ReactCardFlip from 'react-card-flip';
-import { flip } from 'react-animations';
-import {bounce} from 'animate.css'
+
 
 //import Sub3 from './sub3';
 //import Auth from '../utils/auth';
@@ -15,9 +13,8 @@ const Sub2 = () => {
     const card = data?.cards || []
     const [frontText, setFrontText] = useState('');
     const [backText, setBackText] = useState('');
-    const [isFlipped, setIsFlipped] = useState(false) 
     const [characterCount, setCharacterCount] = useState(0);
-    const [addCard, {error}] = useMutation(ADD_CARD, {
+    const [addCard] = useMutation(ADD_CARD, {
         update(cache, {data: {addCard}}) {
             try{
             // read what's in cache
