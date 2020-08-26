@@ -6,14 +6,14 @@ import Signup from './signup'
 //import Navbar from '../navbar'
 
 
-import { QUERY_USER, QUERY_SUBJECT, QUERY_CARDS } from '../utils/queries';
-import { useQuery } from '@apollo/react-hooks';
+//import { QUERY_CARDS } from '../utils/queries';
+//import { useQuery } from '@apollo/react-hooks';
 function CardBody(props) {
     
   //  const { loading, data} = useQuery(QUERY_USER);
-    const {  data} = useQuery(QUERY_CARDS);
-  const user = data?.users || [];
-  const subject = data?.subjects || [];
+  //const {  data} = useQuery(QUERY_CARDS);
+  // const user = data?.users || [];
+  // const subject = data?.subjects || [];
  // console.log(subject)
    
      function renderCard (tab)  {
