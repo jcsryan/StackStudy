@@ -32,7 +32,7 @@ function CardBody(props) {
     
     return(
         <div className="bodycontainer"> 
-            <div classname="cardContainer">
+            <div className="cardContainer">
             {renderCard(props.currentPage)}
             </div>
              </div>
