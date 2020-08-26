@@ -87,15 +87,15 @@ const Sub2 = () => {
         </button>
       </form>
 
-  <div className="wholecard">
-    {card.map(frontcard =>{
-     return <div key={frontcard.id}>
-       <div className="frontcard">{frontcard.frontText}</div>
-       <div className="backcard">{frontcard.backText}</div>
-       </div>
-    })}
-  </div>
+    <div className="wholecard">
+      {card.map(frontcard =>{
+      return <div key={frontcard.id}>
+        <div className="frontcard">{frontcard.frontText}</div>
+        <div className="backcard">{frontcard.backText}</div>
+        </div>
+      })}
     </div>
+  </div>
   );
 };
 
