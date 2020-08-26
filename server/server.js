@@ -9,9 +9,7 @@ const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
-app.listen(process.env.PORT || 3002, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+
 
 // create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
