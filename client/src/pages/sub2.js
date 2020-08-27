@@ -4,7 +4,9 @@ import { ADD_CARD } from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 
-
+function refreshPage(){
+  window.location.reload(false)
+}
 
 //import Sub3 from './sub3';
 //import Auth from '../utils/auth';
@@ -62,6 +64,7 @@ const Sub2 = () => {
        } catch (e) {
            console.error(e)
        }
+       refreshPage();
     };
 
   
@@ -102,6 +105,7 @@ const Sub2 = () => {
         <div  className="flip-card-front"><br></br><br></br>{frontcard.frontText}</div>
         <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
+        <button className="btn btn2 col-12 col-md-3" type="submit" >Delete</button>
         </div>
       })}
        </div>
