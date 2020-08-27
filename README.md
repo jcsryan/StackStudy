@@ -10,7 +10,7 @@
 - [Questions](#questions)
 
 ## Description
-### This is an easy to use flashcard aplication. It gives the user the flexibility to study in any environment, wheather on the go or at the comfort of your own home StackStudy is the way to study. 
+### This is an easy to use flashcard application. It gives the user the flexibility to study in any environment, whether on the go or at the comfort of your own home StackStudy is the way to study. 
 
 ## Motivation 
 ### Today more than ever students are being required to adapt to the way one learns or studies, requiring them to be more mobile and flexible.  StackStudy aims to give students that flexibility and mobility helping them thrive with the changing environment.
