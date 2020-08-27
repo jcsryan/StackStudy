@@ -35,6 +35,15 @@ mutation addCards($frontText: String!, $backText: String!) {
 }
 `;
 
+/*
+export const DELETE_CARD = gql `
+mutation deleteCard($id: ID!) {
+  deleteCard(id: ID!) {
+    _id
+  }
+}
+`;
+*/
 // export const ADD_SUBJECT = gql`
 //     mutation addSubject($name: String!) {
 //         addSubject(name: $name) {

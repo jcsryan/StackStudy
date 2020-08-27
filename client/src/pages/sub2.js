@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { ADD_CARD } from '../utils/mutations';
+import { ADD_CARD, /*DELETE_CARD */} from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 
@@ -68,11 +68,22 @@ const Sub2 = () => {
        } catch (e) {
            console.error(e)
        }
-       refreshPage()
+       refreshPage();
     };
   
-   
-    
+ /*  const [deleteCard] = useMutation(DELETE_CARD)
+   deleteCard({
+     variables: {id: card.id},
+     update: (cache) => {
+       const existingCards = cache.readQuery({ query: QUERY_CARDS})
+       const newCards = existingCards.cards.filter(t => (t.id !== card.id))
+       cache.writeQuery({
+         query: QUERY_CARDS,
+         data: {cards: newCards}
+       })
+     }
+   })
+    */
    
   return (
     <div>
@@ -109,7 +120,7 @@ const Sub2 = () => {
         <div  className="flip-card-front"><br></br><br></br>{frontcard.frontText}</div>
         <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
-        <button className="btn btn2 col-12 col-md-3" type="submit" >Delete</button>
+        <button className="btn btn2 col-12 col-md-3" type="submit"  >Delete</button>
         </div>
         
       })}

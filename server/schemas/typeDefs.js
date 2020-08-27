@@ -31,7 +31,7 @@ type User {
     addCard(frontText: String, backText: String): Card
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    deleteCard(_id: ID): Card
+    deleteCard(_id: ID!): Card
   }
 
   
