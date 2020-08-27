@@ -72,6 +72,17 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in!');
+        },
+        deleteCard({ params }, res) {
+          Card.findOneAndDelete({ _id: params.id })
+            .then(dbCardData => {
+              if (!dbCardData) {
+                res.status(404).json({ message: 'No Card found with this id!' });
+                return;
+              }
+              res.json(dbCardData);
+            })
+            .catch(err => res.status(400).json(err));
         }
     }
 };

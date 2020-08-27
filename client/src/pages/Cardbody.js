@@ -24,8 +24,8 @@ function CardBody(props) {
                 return <Login/>
             case 'signup':
                 return <Signup/>
-                default:
-                  return <Login/>
+            default:
+                return <Sub2/>
         }
     } 
      
