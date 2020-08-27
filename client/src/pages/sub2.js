@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { ADD_CARD } from '../utils/mutations';
+import { ADD_CARD, /*DELETE_CARD */} from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 
+
+
+//import Sub3 from './sub3';
+//import Auth from '../utils/auth';
 function refreshPage(){
   window.location.reload(false)
 }
 
-//import Sub3 from './sub3';
-//import Auth from '../utils/auth';
+
+
 const Sub2 = () => {
     const {data} = useQuery(QUERY_CARDS)
     const card = data?.cards || []
@@ -66,9 +70,20 @@ const Sub2 = () => {
        }
        refreshPage();
     };
-
   
-    
+ /*  const [deleteCard] = useMutation(DELETE_CARD)
+   deleteCard({
+     variables: {id: card.id},
+     update: (cache) => {
+       const existingCards = cache.readQuery({ query: QUERY_CARDS})
+       const newCards = existingCards.cards.filter(t => (t.id !== card.id))
+       cache.writeQuery({
+         query: QUERY_CARDS,
+         data: {cards: newCards}
+       })
+     }
+   })
+    */
    
   return (
     <div>
@@ -100,14 +115,16 @@ const Sub2 = () => {
       <div className="wholecard">
         <div className="cardflip-div">
       {card.map(frontcard =>{
-      return <div className="flip-card">
+      return <div className="flip-card" id="flip-card">
       <div className="flip-card-inner" key={frontcard.id}>
         <div  className="flip-card-front"><br></br><br></br>{frontcard.frontText}</div>
         <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
-        <button className="btn btn2 col-12 col-md-3" type="submit" >Delete</button>
+        <button className="btn btn2 col-12 col-md-3" type="submit"  >Delete</button>
         </div>
+        
       })}
+      
        </div>
     </div>
   
