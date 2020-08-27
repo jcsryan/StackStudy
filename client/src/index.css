@@ -194,3 +194,7 @@ button:hover {
     color: white;
     border: 1px solid rgba(0,0,0,1);
 }
+
+.btn2 {
+  margin-left: -150px;
+}

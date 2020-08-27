@@ -10,7 +10,7 @@ const cardSchema = new Schema({
   backText: {
     type: String,
     required: true
-  }
+  },
 });
 
 const Card = mongoose.model('Card', cardSchema);
