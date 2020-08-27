@@ -29,10 +29,10 @@ type User {
 
   type Mutation {
     addCard(frontText: String, backText: String): Card
+    deleteCard(_id: ID!): Card
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
   }
-
   
   type Auth {
     token: ID!

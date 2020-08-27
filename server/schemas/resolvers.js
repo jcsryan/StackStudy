@@ -72,8 +72,13 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in!');
-        }
-    }
+        },
+          // delete card
+          deleteCard: async (parent, {_id }) => {
+            return Card.deleteOne({ _id });
+        },
+        
+    },
 };
 
 module.exports = resolvers;
