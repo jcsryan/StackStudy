@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">StackStudy</h1>
 
-## Available Scripts
+### [Try StackStudy](https://stackstudy.herokuapp.com/#Your%20Cards/)
 
-In the project directory, you can run:
+## Table of Contents
+- [Description](#description)
+- [Motivation](#motivation)
+- [Installation](#install)
+- [NPM](#npm)
+- [Questions](#questions)
 
-### `npm start`
+## Description
+### This is an easy to use flashcard application. It gives the user the flexibility to study in any environment, whether on the go or at the comfort of your own home StackStudy is the way to study. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Motivation 
+### Today more than ever students are being required to adapt to the way one learns or studies, requiring them to be more mobile and flexible.  StackStudy aims to give students that flexibility and mobility helping them thrive with the changing environment.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshot of the webpage:
+### This is what the sigup page looks like for users visiting the app for the first time:
+![alt "screenshot"](https://github.com/jcsryan/StackStudy/blob/master/screenshots/screenshot1.png)
 
-### `npm test`
+### Returning users can just login to get access to their flashcards:
+![alt "screenshot"](https://github.com/jcsryan/StackStudy/blob/master/screenshots/screenshot2.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### This is where you create flash cards and get start studying:
+![alt "screenshot"](https://github.com/jcsryan/StackStudy/blob/master/screenshots/screenshot3.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## NPM Packages
+* [React](https://www.npmjs.com/package/react)
+* [animate.css](https://www.npmjs.com/package/animate.css?activeTab=versions)
+* [if-env](https://www.npmjs.com/package/if-env)
+* [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+* [apollo-server-expres](https://www.npmjs.com/package/apollo-server-express)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [express](https://www.npmjs.com/package/express)
+* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+* [mongoose](https://www.npmjs.com/package/mongoose)
+* [apollo-react-hooks](https://www.npmjs.com/package/@apollo/react-hooks)
+* [apollo-boost](https://www.npmjs.com/package/apollo-boost)
+* [graphql](https://www.npmjs.com/package/graphql)
+* [jwt-decode](https://www.npmjs.com/package/jwt-decode)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Questions
+## Contact us at:
+### [Silvam2017](https://github.com/Silvam2017)
+### [JCSRyan](https://github.com/jcsryan)
+### [Israel0688](https://github.com/israel0688)
+### MichaelsEmailWillGoHere@gmail.com
+### JohnConnorSRyan@gmail.com
+### Israel0688@gmail.com
