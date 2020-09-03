@@ -33,9 +33,9 @@ code {
 /*header div*/
 
 .nav-list {
-  margin-left: 1.75em;
+  margin-left: .5em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 8vh;
   font-size: xx-large;
   font-weight: 900;
@@ -57,8 +57,12 @@ code {
   background-color: bisque;
 }
 
-.cardContainet {
+.cardContainer {
   background-color: blueviolet;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .wholeCard {
@@ -78,7 +82,6 @@ code {
   width: 500px;
   height: 300px;
   perspective: 1000px;
-  margin: 1rem;
   position: relative;
   width: 325px;
 
@@ -105,9 +108,6 @@ code {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   text-align: center;
-  align-self: center;
-  justify-content: center;
-  justify-self: center;
 }
 
 .flip-card-front {
@@ -153,11 +153,6 @@ code {
   background-size: contain;
 }
 
-.cardflip-div {
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
 .form-input {
   align-self: center;
@@ -203,6 +198,72 @@ button:hover {
     border: 1px solid rgba(0,0,0,1);
 }
 
-.btn2 {
-  margin-left: -150px;
+.center-me {
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 50%;
+  margin-left: 50%;
 }
+
+@media only screen and (min-width: 1681px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 35%;
+    margin-left: 35%;
+  }
+}  
+
+@media only screen and (max-width: 1680px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 33%;
+    margin-left: 33%;
+  }
+}  
+
+@media only screen and (max-width: 1390px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 30%;
+    margin-left: 30%;
+  }
+}  
+
+@media only screen and (max-width: 1100px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+}  
+
+@media only screen and (max-width: 990px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+} 
+
+@media only screen and (max-width: 800px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+} 
+
+@media only screen and (max-width: 610px) {  
+  .center-me {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+} 
