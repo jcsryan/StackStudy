@@ -19,12 +19,17 @@ type User {
     backText: String
   }
 
+  type Donation {
+    session: ID
+  }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     cards(frontText: String, backText: String): [Card]
     card(_id: ID!): Card
+    donation(donations: [ID]!): Donation
   }
 
   type Mutation {

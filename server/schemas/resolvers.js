@@ -34,6 +34,41 @@ const resolvers = {
         card: async (parent, {_id }) => {
             return Card.findOne({ _id });
         },
+        donation: async (parent, args, context) => {
+          const donation = new donation({ donations: args.donations });
+          const { donations } = await donation.populate('donations').execPopulate();
+          const line_items = [];
+
+          for (let i = 0; i < donations.length; i++) {
+            // generate donation id
+            const donation = await stripe.donations.create({
+              name: donations[i].name,
+              description: donations[i].description
+            });
+
+            // generate price id using the donation id
+            const price = await stripe.prices.create({
+              donation: donation.id,
+              unit_amount: donations[i].price * 100,
+              currency: 'usd',
+            });
+
+            // add price id to the line items array
+            line_items.push({
+              price: price.id,
+              quantity: 1
+            });
+          }
+          const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items,
+            mode: 'payment',
+            success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url: 'https://example.com/cancel'
+          });
+          
+          return { session: session.id };
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {
