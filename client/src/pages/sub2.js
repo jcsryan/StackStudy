@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { ADD_CARD, /*DELETE_CARD */} from '../utils/mutations';
+import { ADD_CARD, DELETE_CARD } from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
-
+import DeleteButton from '../utils/delete'
 
 
 //import Sub3 from './sub3';
@@ -71,21 +71,10 @@ const Sub2 = () => {
        refreshPage();
     };
   
- /*  const [deleteCard] = useMutation(DELETE_CARD)
-   deleteCard({
-     variables: {id: card.id},
-     update: (cache) => {
-       const existingCards = cache.readQuery({ query: QUERY_CARDS})
-       const newCards = existingCards.cards.filter(t => (t.id !== card.id))
-       cache.writeQuery({
-         query: QUERY_CARDS,
-         data: {cards: newCards}
-       })
-     }
-   })
-    */
    
-  return (
+    
+
+    return (
     <div>
         <div className='logincard'>
           <div className='login-card-outer'>
@@ -120,12 +109,14 @@ const Sub2 = () => {
         <div  className="flip-card-front"><br></br><br></br>{frontcard.frontText}</div>
         <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
-        <button className="btn btn2 col-12 col-md-3" type="submit"  >Delete</button>
+       
+        
         </div>
         
       })}
       
        </div>
+      
     </div>
   
    
@@ -136,6 +127,49 @@ const Sub2 = () => {
 export default Sub2;
 
 /*
+
+ <button className="btn btn2 col-12 col-md-3" type="submit" >Delete</button>
+
+
+   update(cache, {data: {card, id}}) {
+         cache.modify({
+           id: card.id,
+           fields: {
+             card({DELETE}){
+               return DELETE
+             }
+           }
+         })
+  }
+})
+
+
+
+
+
+   const [deleteCard] = useMutation(DELETE_CARD)
+   const newdeleteCard = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+   deleteCard({
+     variables: {id: card._id},
+     
+     //optimisticResponse: true,
+     update: (cache) => {
+     
+       const existingCards = cache.readQuery({ query: QUERY_CARDS });
+       const newCards = existingCards.cards.filter(t => (t.id !== card.id));
+       cache.writeQuery({
+         query: QUERY_CARDS,
+         data: {cards: newCards}
+       });
+     }
+   });
+  };
+    
+
+
+
    {card.map(frontcard =>{
         return <div key={frontcard.id}>
         <div className="frontcard">{frontcard.frontText}</div>

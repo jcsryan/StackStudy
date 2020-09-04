@@ -5,8 +5,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks'
 //import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-
-
+import DeleteButton from './utils/delete'
 import Navbar from './pages/navbar'
 import Cardbody from './pages/Cardbody'
 const client = new ApolloClient({
