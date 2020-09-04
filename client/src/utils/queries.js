@@ -45,3 +45,11 @@ query users{
         }
     }
   `;
+
+  export const QUERY_DONATION = gql `
+  query donation($donations: [ID]!) {
+    donation(donations: $donations) {
+      session
+    }
+  }
+  `;
