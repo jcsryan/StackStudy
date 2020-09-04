@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { ADD_CARD, /*DELETE_CARD */} from '../utils/mutations';
+import { ADD_CARD } from '../utils/mutations';
 import { QUERY_ME, QUERY_CARDS } from '../utils/queries';
 import { useQuery } from '@apollo/react-hooks';
 
-
-
-//import Sub3 from './sub3';
-//import Auth from '../utils/auth';
 function refreshPage(){
   window.location.reload(false)
 }
 
-
-
+//import Sub3 from './sub3';
+//import Auth from '../utils/auth';
 const Sub2 = () => {
     const {data} = useQuery(QUERY_CARDS)
     const card = data?.cards || []
@@ -70,20 +66,9 @@ const Sub2 = () => {
        }
        refreshPage();
     };
+
   
- /*  const [deleteCard] = useMutation(DELETE_CARD)
-   deleteCard({
-     variables: {id: card.id},
-     update: (cache) => {
-       const existingCards = cache.readQuery({ query: QUERY_CARDS})
-       const newCards = existingCards.cards.filter(t => (t.id !== card.id))
-       cache.writeQuery({
-         query: QUERY_CARDS,
-         data: {cards: newCards}
-       })
-     }
-   })
-    */
+    
    
   return (
     <div>
@@ -122,9 +107,8 @@ const Sub2 = () => {
         <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
         </div>
-        
+        </div>
       })}
-      
        </div>
     </div>
   
@@ -134,88 +118,3 @@ const Sub2 = () => {
 };
 
 export default Sub2;
-
-/*
-
-<button className="btn btn2 col-12 col-md-3" type="submit" >Delete</button>
-   {card.map(frontcard =>{
-        return <div key={frontcard.id}>
-        <div className="frontcard">{frontcard.frontText}</div>
-        </div>
-      })}
-
-      {card.map(frontcard =>{
-        return <div key={frontcard.id}>
-        <div className="backcard">{frontcard.backText}</div>
-        </div>
-      })} 
-
-
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
-import { ADD_CARD } from '../utils/mutations';
-import { QUERY_CARDS, QUERY_ME } from '../utils/queries';
-import Sub3 from './sub3';
-import Auth from '../utils/auth';
-import { useQuery } from '@apollo/react-hooks';
-
-const Sub2 = () => {
-    const [addCard, { error }] = useMutation(ADD_CARD);
-
-    const [formState, setFormState] = useState({frontText:'', backText:''});
-
-    const handleFormSubmit = async event => {
-        event.preventDefault();
-
-        const mutationResponse = await addCard({
-            variables: {
-                frontText: formState.frontText,
-                backText: formState.backText
-            }
-        });
-    }
-
-    const handleChange = event => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value
-        });
-    };
-
-    return (
-        <div className="container my-1">
-  
-        <h2>Signup</h2>
-        <form onSubmit={handleFormSubmit}>
-          <div className="flex-row space-between my-2">
-            <label htmlFor="firstName">Front Text:</label>
-            <textarea
-              placeholder="Front"
-              name="front"
-              type="firstName"
-              id="frontText"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="flex-row space-between my-2">
-            <label htmlFor="lastName">Back Text</label>
-            <textarea
-              placeholder="Back"
-              name="back"
-              type="lastName"
-              id="lastName"
-              onChange={handleChange}
-            />
-          </div>
-        
-            <button type="submit">
-              Submit
-            </button>
-        </form>
-      </div>
-    );
-};
-
-export default Sub2;
-*/
