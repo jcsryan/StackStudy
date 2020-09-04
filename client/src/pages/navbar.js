@@ -1,13 +1,13 @@
 import React from "react";
 
 function Navbar(props) {
-    const tabs = ['Your Cards', "login", "signup"]
+    const tabs = ['Your Cards', "login", "signup", "Donate"]
     return(
         <ul className='nav' >
             <div  className="nav-list">
             {tabs.map(tab => (
                 <li className="nav-list" key={tab}>
-                    <a id="nav-list-a" href={'#' + tab}
+                    <button className="btn btn2 col-12 col-md-3" href={'#' + tab}
                     onClick={()=> props.handlePageChange(tab)}
                 
                     className={
@@ -16,7 +16,7 @@ function Navbar(props) {
                     }
                     >
                         {tab}
-                    </a>
+                    </button>
                 </li>
             ))}
             </div>

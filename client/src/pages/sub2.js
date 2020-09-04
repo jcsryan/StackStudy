@@ -115,12 +115,12 @@ const Sub2 = () => {
       <div className="wholecard">
         <div className="cardflip-div">
       {card.map(frontcard =>{
-      return <div className="flip-card" id="flip-card">
+      return <div className="center-me">
+      <div className="flip-card">
       <div className="flip-card-inner" key={frontcard.id}>
         <div  className="flip-card-front"><br></br><br></br>{frontcard.frontText}</div>
         <div  className="flip-card-back"><br></br><br></br><br></br><br></br>{frontcard.backText}</div>
         </div>
-        <button className="btn btn2 col-12 col-md-3" type="submit"  >Delete</button>
         </div>
         
       })}
@@ -136,6 +136,8 @@ const Sub2 = () => {
 export default Sub2;
 
 /*
+
+<button className="btn btn2 col-12 col-md-3" type="submit" >Delete</button>
    {card.map(frontcard =>{
         return <div key={frontcard.id}>
         <div className="frontcard">{frontcard.frontText}</div>

@@ -22,11 +22,11 @@
 ### Returning users can just login to get access to their flashcards:
 ![alt "screenshot"](https://github.com/jcsryan/StackStudy/blob/master/screenshots/screenshot2.png)
 
-### This is where you create flash cards and get start studying:
+### This is where you create flash cards and start studying:
 ![alt "screenshot"](https://github.com/jcsryan/StackStudy/blob/master/screenshots/screenshot3.png)
 
 
-## NPM Packages
+## NPM
 * [React](https://www.npmjs.com/package/react)
 * [animate.css](https://www.npmjs.com/package/animate.css?activeTab=versions)
 * [if-env](https://www.npmjs.com/package/if-env)
@@ -46,6 +46,6 @@
 ### [Silvam2017](https://github.com/Silvam2017)
 ### [JCSRyan](https://github.com/jcsryan)
 ### [Israel0688](https://github.com/israel0688)
-### MichaelsEmailWillGoHere@gmail.com
+### msilva@aggienetwork.com
 ### JohnConnorSRyan@gmail.com
 ### Israel0688@gmail.com
