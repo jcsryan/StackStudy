@@ -1,7 +1,7 @@
 import React from "react";
 
 function Navbar(props) {
-    const tabs = ['Your Cards', "login", "signup"]
+    const tabs = ['Your Cards', "login", "signup", "Donate"]
     return(
         <ul className='nav' >
             <div  className="nav-list">

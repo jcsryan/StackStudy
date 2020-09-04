@@ -7,6 +7,7 @@ import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks'
 
 import Navbar from './pages/navbar'
 import Cardbody from './pages/Cardbody'
+import Footer from './pages/footer'
 const client = new ApolloClient({
   
   request: operation => {

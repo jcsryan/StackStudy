@@ -3,6 +3,7 @@ import Sub2 from './sub2';
 
 import Login from './login'
 import Signup from './signup'
+import Footer from './footer'
 //import Navbar from '../navbar'
 
 
@@ -24,6 +25,8 @@ function CardBody(props) {
                 return <Login/>
             case 'signup':
                 return <Signup/>
+            case 'Donate':
+                return <Footer/>
             default:
                 return <Sub2/>
         }
